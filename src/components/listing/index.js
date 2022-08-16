@@ -5,7 +5,9 @@ import {url} from "../../util";
 
 function Listing() {
     const [list, setList]=useState([]);
-   
+    const [previde, setId]=useState(null)
+    // const [loader, setLoader]=useState(true);
+    // const scrollto = useRef();
     useEffect(()=>{
         axios.get(url).then((res)=>{
             res.data && setList([...res.data]);
@@ -13,11 +15,14 @@ function Listing() {
         })
     },[])
     const scrolltoid=(id)=>{
-        
+        if(previde){
+            let preelemento=document.getElementById(previde);   
+            preelemento.style.background="transparent" 
+        }
         let elemento=document.getElementById(id);
         elemento.scrollIntoView();
         elemento.style.background='red';
-        
+        setId(id)
     }
     
   return (

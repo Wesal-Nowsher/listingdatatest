@@ -10,9 +10,7 @@ td, th {
   padding: 8px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
+
 .listing{
   max-height: 400px;
     overflow-y: scroll
@@ -27,5 +25,5 @@ tr:nth-child(even) {
 
 .App{
   height: 100vh;
-    overflow: scroll;
+   
 }
